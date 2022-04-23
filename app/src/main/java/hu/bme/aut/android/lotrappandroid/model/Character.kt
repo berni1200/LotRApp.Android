@@ -1,7 +1,13 @@
 package hu.bme.aut.android.lotrappandroid.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import javax.annotation.concurrent.Immutable
+
+@Entity
+@Immutable
 data class Character (
-    val id: String,
+    @PrimaryKey val id: String,
     val height: String,
     val race: String,
     val gender: String,
