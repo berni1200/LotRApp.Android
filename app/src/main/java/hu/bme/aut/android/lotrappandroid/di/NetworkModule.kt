@@ -22,7 +22,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideNetworkModule(apiService: LotRService): NetworkProvider {
+    fun provideNetworkProvider(apiService: LotRService): NetworkProvider {
         return NetworkProviderImpl(apiService)
     }
 
