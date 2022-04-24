@@ -11,14 +11,4 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    @Inject
-    lateinit var networkProvider: NetworkProvider
-
-    init{
-        lifecycleScope.launch {
-            delay(10000)
-            println("xxx" + networkProvider.fetchCharacterList().toString())
-        }
-    }
-
 }
