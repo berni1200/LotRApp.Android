@@ -7,10 +7,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import hu.bme.aut.android.lotrappandroid.network.LotRService
-import hu.bme.aut.android.lotrappandroid.network.RequestInterceptor
 import hu.bme.aut.android.lotrappandroid.network.interceptor.addAuthorizationKeyToHeader
-import hu.bme.aut.android.lotrappandroid.network.provider.NetworkProvider
-import hu.bme.aut.android.lotrappandroid.network.provider.NetworkProviderImpl
+import hu.bme.aut.android.lotrappandroid.network.provider.NetworkDataSource
+import hu.bme.aut.android.lotrappandroid.network.provider.NetworkDataSourceImpl
 import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -22,8 +21,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideNetworkProvider(apiService: LotRService): NetworkProvider {
-        return NetworkProviderImpl(apiService)
+    fun provideNetworkProvider(apiService: LotRService): NetworkDataSource {
+        return NetworkDataSourceImpl(apiService)
     }
 
     @Provides
