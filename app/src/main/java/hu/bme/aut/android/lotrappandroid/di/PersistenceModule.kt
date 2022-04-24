@@ -28,7 +28,7 @@ object PersistenceModule {
 
     @Provides
     @Singleton
-    fun providePosterDao(appDatabase: AppDatabase): CharacterDao {
+    fun provideCharacterDao(appDatabase: AppDatabase): CharacterDao {
         return appDatabase.characterDao()
     }
 }
