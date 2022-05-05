@@ -1,6 +1,6 @@
 package hu.bme.aut.android.lotrappandroid.details
 
-import hu.bme.aut.android.lotrappandroid.model.Character
+import hu.bme.aut.android.lotrappandroid.model.LotRCharacter
 import hu.bme.aut.android.lotrappandroid.network.ApiResponse
 import hu.bme.aut.android.lotrappandroid.network.provider.NetworkDataSource
 import hu.bme.aut.android.lotrappandroid.persistence.CharacterDao
@@ -16,8 +16,8 @@ class DetailsRepository(
     private val networkDataSource: NetworkDataSource,
     override val coroutineContext: CoroutineContext = Dispatchers.IO
 ) : CoroutineScope {
-    private val _character = MutableSharedFlow<Character>(1, 100)
-    val character : Flow<Character> = _character
+    private val _character = MutableSharedFlow<LotRCharacter>(1, 100)
+    val character : Flow<LotRCharacter> = _character
 
     fun fetchCharacter(id : String){
         launch(coroutineContext) {

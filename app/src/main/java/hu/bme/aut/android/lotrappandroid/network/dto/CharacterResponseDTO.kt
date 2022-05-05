@@ -1,6 +1,6 @@
 package hu.bme.aut.android.lotrappandroid.network.dto
 
-import hu.bme.aut.android.lotrappandroid.model.Character
+import hu.bme.aut.android.lotrappandroid.model.LotRCharacter
 
 
 data class CharacterResponseDTO (
@@ -13,10 +13,10 @@ data class CharacterResponseDTO (
 
 )
 
-fun CharacterResponseDTO.mapToCharacterList(): List<Character> {
-    val characterList : MutableList<Character> = mutableListOf()
+fun CharacterResponseDTO.mapToCharacterList(): List<LotRCharacter> {
+    val characterList : MutableList<LotRCharacter> = mutableListOf()
     for (d in this.docs){
-        characterList.add(Character(
+        characterList.add(LotRCharacter(
             id = d.id,
             height = d.height,
             race = d.race,

@@ -1,4 +1,12 @@
 package hu.bme.aut.android.lotrappandroid.main
 
-class MainViewModel {
+import androidx.lifecycle.*
+import dagger.hilt.android.lifecycle.HiltViewModel
+import hu.bme.aut.android.lotrappandroid.model.LotRCharacter
+import javax.inject.Inject
+
+@HiltViewModel
+class MainViewModel @Inject constructor(mainRepository: MainRepository) : ViewModel(), LifecycleObserver {
+    val characterList: LiveData<List<LotRCharacter>> = mainRepository.characterList.asLiveData()
+
 }

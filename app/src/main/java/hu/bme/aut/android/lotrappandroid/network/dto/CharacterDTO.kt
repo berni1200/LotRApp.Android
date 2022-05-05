@@ -1,6 +1,6 @@
 package hu.bme.aut.android.lotrappandroid.network.dto
 
-import hu.bme.aut.android.lotrappandroid.model.Character
+import hu.bme.aut.android.lotrappandroid.model.LotRCharacter
 
 data class CharacterDTO (
     val id: String,
@@ -16,8 +16,8 @@ data class CharacterDTO (
     val wikiUrl: String
 )
 
-fun CharacterDTO.mapToCharacter(): Character{
-    return Character(
+fun CharacterDTO.mapToCharacter(): LotRCharacter{
+    return LotRCharacter(
         id = this.id,
         height = this.height,
         race = this.race,
