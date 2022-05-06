@@ -34,4 +34,10 @@ class MainRepository(
         }
     }
 
+    fun filterCharacterList(filter: String){
+        launch(coroutineContext) {
+            _characterList.tryEmit(characterDao.getCharacterList().filter { it.name!!.contains(filter) })
+        }
+    }
+
 }

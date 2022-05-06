@@ -14,5 +14,6 @@ class MainViewModel @Inject constructor(val mainRepository: MainRepository) : Vi
     }
 
     fun filterCharacterList(filter: String){
+        mainRepository.filterCharacterList(filter)
     }
 }

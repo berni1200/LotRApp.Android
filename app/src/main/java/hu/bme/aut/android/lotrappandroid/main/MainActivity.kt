@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), CharacterListAdapter.CharacterListItem
         setContentView(R.layout.activity_main)
         initRecyclerView()
 
-        this.setTitle("Characters")
+        this.title = "Characters"
 
         mainViewModel.fetchCharacterList()
 
