@@ -8,6 +8,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
@@ -16,7 +17,7 @@ class MainRepository(
     private val networkDataSource: NetworkDataSource,
     override val coroutineContext: CoroutineContext = Dispatchers.IO
 ) : CoroutineScope{
-    private val _characterList = MutableSharedFlow<List<LotRCharacter>>(1, 100)
+    private var _characterList = MutableSharedFlow<List<LotRCharacter>>(1, 100)
     val characterList : Flow<List<LotRCharacter>> = _characterList
 
     fun fetchCharacterList(){

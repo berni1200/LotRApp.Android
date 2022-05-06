@@ -12,7 +12,7 @@ import hu.bme.aut.android.lotrappandroid.model.LotRCharacter
 class CharacterListAdapter(private val listener: CharacterListItemClickListener) :
     RecyclerView.Adapter<CharacterListAdapter.CharacterListViewHolder>() {
 
-    private val items = ArrayList<LotRCharacter>()
+    private val items = ArrayList<LotRCharacter?>()
 
     override fun getItemCount(): Int {
         return items.size
@@ -27,8 +27,8 @@ class CharacterListAdapter(private val listener: CharacterListItemClickListener)
         val item = items[position]
 
         holder.item = item
-        holder.nameTextView.text = item.name
-        holder.raceTextView.text = item.race
+        holder.nameTextView.text = item?.name
+        holder.raceTextView.text = item?.race
     }
 
     interface CharacterListItemClickListener{
@@ -50,7 +50,7 @@ class CharacterListAdapter(private val listener: CharacterListItemClickListener)
     fun update(listItems: List<LotRCharacter>){
         items.clear()
         items.addAll(listItems)
-        notifyDataSetChanged()
+        this.notifyDataSetChanged()
     }
 
 }

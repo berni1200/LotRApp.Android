@@ -9,28 +9,45 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/FilterLayout"
+        android:layout_marginBottom="8dp">
 
         <EditText
             android:id="@+id/MainFilterEditText"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/MainFilterButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/MainFilterButton"/>
+            android:textSize="16sp"
+            />
+
         <Button
             android:id="@+id/MainFilterButton"
-            android:layout_width="120dp"
-            android:text="Filter"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            android:text="Filter"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/MainRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/FilterLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

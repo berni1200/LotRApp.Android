@@ -4,20 +4,23 @@ import hu.bme.aut.android.lotrappandroid.model.LotRCharacter
 
 
 data class CharacterResponseDTO (
-    val docs: List<CharacterDTO>,
-    val total: Int,
-    val limit: Int,
-    val offset: Int,
-    val page: Int,
-    val pages: Int
+    val docs: List<CharacterDTO>?,
+    val total: Int?,
+    val limit: Int?,
+    val offset: Int?,
+    val page: Int?,
+    val pages: Int?
 
 )
 
 fun CharacterResponseDTO.mapToCharacterList(): List<LotRCharacter> {
     val characterList : MutableList<LotRCharacter> = mutableListOf()
-    for (d in this.docs){
+    for (d in this.docs!!){
+        if(d.id == null){
+            d.id = "null"
+        }
         characterList.add(LotRCharacter(
-            id = d.id,
+            id = d.id!!,
             height = d.height,
             race = d.race,
             gender = d.gender,

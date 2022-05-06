@@ -3,6 +3,8 @@ package hu.bme.aut.android.lotrappandroid.main
 import android.app.Notification
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -27,10 +29,22 @@ class MainActivity : AppCompatActivity(), CharacterListAdapter.CharacterListItem
         setContentView(R.layout.activity_main)
         initRecyclerView()
 
+        this.setTitle("Characters")
+
+        mainViewModel.fetchCharacterList()
+
         mainViewModel.characterList.observe(this, Observer { newContent ->
             adapter.update(newContent)
-            println("--------------------observe")
         })
+
+        val filterEditText : EditText = findViewById(R.id.MainFilterEditText)
+        val filterButton : Button = findViewById(R.id.MainFilterButton)
+
+        filterButton.setOnClickListener { e ->
+            mainViewModel.filterCharacterList(filterEditText.text.toString())
+            filterEditText.clearFocus()
+            recyclerView.adapter?.notifyDataSetChanged()
+        }
 
     }
 

@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/CharacterListItemLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="#FFFFEE"
     android:padding="8dp"
-    android:layout_marginHorizontal="4dp">
-    
-    <LinearLayout
+    android:layout_marginHorizontal="4dp"
+    android:background="@color/cardview_shadow_end_color">
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="2">
+        app:cardCornerRadius="8dp">
 
-        <TextView
-            android:id="@+id/NameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Character_name"/>
 
-        <TextView
-            android:id="@+id/RaceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Character_race"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:padding="8dp">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/NameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Character_name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/RaceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Character_race"
+                android:textSize="16sp"
+                android:textStyle="italic"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     
 </LinearLayout>
