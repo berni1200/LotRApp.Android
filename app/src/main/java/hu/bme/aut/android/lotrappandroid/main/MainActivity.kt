@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(), CharacterListAdapter.CharacterListItem
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CharacterListAdapter
     private val mainViewModel: MainViewModel by viewModels()
+    private lateinit var list : List<LotRCharacter>
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity(), CharacterListAdapter.CharacterListItem
         mainViewModel.fetchCharacterList()
 
         mainViewModel.characterList.observe(this, Observer { newContent ->
+            list = newContent
             adapter.update(newContent)
         })
 
@@ -41,9 +43,10 @@ class MainActivity : AppCompatActivity(), CharacterListAdapter.CharacterListItem
         val filterButton : Button = findViewById(R.id.MainFilterButton)
 
         filterButton.setOnClickListener { e ->
-            mainViewModel.filterCharacterList(filterEditText.text.toString())
-            filterEditText.clearFocus()
-            recyclerView.adapter?.notifyDataSetChanged()
+
+            val tempList = mainViewModel.filterCharacterList(filterEditText.text.toString(), list)
+            //filterEditText.clearFocus()
+            adapter.update(tempList)
         }
 
     }

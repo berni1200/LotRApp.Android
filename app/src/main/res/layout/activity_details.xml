@@ -21,7 +21,7 @@
             android:id="@+id/LifetimeLabelTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Lifetime"
+            android:text="@string/lifetimeLabel"
             android:layout_margin="4dp"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -36,8 +36,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="March 1,2931 - FO 120"
-            android:textSize="16sp"
+            android:text="@string/lifetimeValue"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 
@@ -57,7 +57,7 @@
             android:id="@+id/GenderLabelTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:text="@string/genderLabel"
             android:layout_margin="4dp"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -72,8 +72,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Male"
-            android:textSize="16sp"
+            android:text="@string/genderValue"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 
@@ -93,7 +93,7 @@
             android:id="@+id/RaceLabelTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Race"
+            android:text="@string/raceLabel"
             android:layout_margin="4dp"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -108,8 +108,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Human"
-            android:textSize="16sp"
+            android:text="@string/raceValue"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 
@@ -129,7 +129,7 @@
             android:id="@+id/HeightLabelTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Height"
+            android:text="@string/heightLabel"
             android:layout_margin="4dp"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -144,8 +144,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="198cm"
-            android:textSize="16sp"
+            android:text="@string/heightValue"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 
@@ -165,7 +165,7 @@
             android:id="@+id/RealmLabelTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Realm"
+            android:text="@string/realmLabel"
             android:layout_margin="4dp"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -180,8 +180,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Reunited Kingdom, Arnor, Gondor"
-            android:textSize="16sp"
+            android:text="@string/realmValue"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 
@@ -201,7 +201,7 @@
             android:id="@+id/SpouseLabelTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Spouse"
+            android:text="@string/spouseLabel"
             android:layout_margin="4dp"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -216,8 +216,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Arwen"
-            android:textSize="16sp"
+            android:text="@string/spouseValue"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 
@@ -237,7 +237,7 @@
             android:id="@+id/WikiUrlLabelTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="wikiUrl"
+            android:text="@string/wikiurlLabel"
             android:layout_margin="4dp"
             android:textSize="20sp"
             android:textStyle="italic"
@@ -252,9 +252,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="http://lotr.wikia.com/wiki/Aragorn_II_Elessar"
-            android:textSize="16sp"
+            android:text="@string/wikiurlValue"
+            android:textSize="20sp"
             android:textStyle="bold"
+            android:autoLink="web"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

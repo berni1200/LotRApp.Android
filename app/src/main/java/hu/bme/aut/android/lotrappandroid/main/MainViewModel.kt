@@ -13,7 +13,8 @@ class MainViewModel @Inject constructor(val mainRepository: MainRepository) : Vi
         mainRepository.fetchCharacterList()
     }
 
-    fun filterCharacterList(filter: String){
-        mainRepository.filterCharacterList(filter)
+
+    fun filterCharacterList(filter: String, list: List<LotRCharacter>) : List<LotRCharacter>{
+        return list.filter { it.name!!.contains(filter) }
     }
 }

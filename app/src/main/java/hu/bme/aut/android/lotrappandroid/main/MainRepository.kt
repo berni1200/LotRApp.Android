@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
@@ -34,10 +35,5 @@ class MainRepository(
         }
     }
 
-    fun filterCharacterList(filter: String){
-        launch(coroutineContext) {
-            _characterList.tryEmit(characterDao.getCharacterList().filter { it.name!!.contains(filter) })
-        }
-    }
 
 }

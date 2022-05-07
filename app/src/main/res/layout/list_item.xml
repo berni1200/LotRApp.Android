@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     android:padding="8dp"
     android:layout_marginHorizontal="4dp"
-    android:background="@color/cardview_shadow_end_color">
+    android:background="@color/colorItem">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Character_name"
+                android:text="@string/character_name"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="8dp"/>
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Character_race"
+                android:text="@string/character_race"
                 android:textSize="16sp"
                 android:textStyle="italic"/>
 
