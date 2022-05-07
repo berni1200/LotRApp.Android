@@ -41,17 +41,13 @@ class DetailsActivity : AppCompatActivity() {
 
         this.title = character.name?: "Nameless character"
 
-        lifetimeValue.text = character.birth?: "" + "-" + character.death?: ""
-        genderValue.text = character.gender?: "-"
-        raceValue.text = character.race?: "-"
-        heightValue.text = character.height?: "-"
-        realmValue.text = character.realm?: "-"
-        spouseValue.text = character.spouse?: "-"
-        wikiUrlValue.text = character.wikiUrl?: "-"
-        if(character.wikiUrl == null){
-            wikiUrlValue.text = "-"
-        }else{
-            wikiUrlValue.text = character.wikiUrl
-        }
+        lifetimeValue.text = character.birth + " - " + character.death
+        genderValue.text = character.gender
+        raceValue.text = character.race
+        heightValue.text = character.height
+        realmValue.text = character.realm
+        spouseValue.text = character.spouse
+        wikiUrlValue.text = character.wikiUrl
+        wikiUrlValue.text = character.wikiUrl
     }
 }

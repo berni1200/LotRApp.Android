@@ -1,11 +1,9 @@
 package hu.bme.aut.android.lotrappandroid.main
 
-import android.app.Notification
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer

@@ -15,6 +15,6 @@ class MainViewModel @Inject constructor(val mainRepository: MainRepository) : Vi
 
 
     fun filterCharacterList(filter: String, list: List<LotRCharacter>) : List<LotRCharacter>{
-        return list.filter { it.name!!.contains(filter) }
+        return list.filter { it.name.toLowerCase().contains(filter.toLowerCase()) }
     }
 }

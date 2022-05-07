@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:weightSum="10"
+    android:weightSum="8"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
 
         <TextView
             app:layout_constraintTop_toTopOf="parent"
@@ -20,10 +21,10 @@
             app:layout_constraintEnd_toStartOf="@id/LifetimeValueTextView"
             android:id="@+id/LifetimeLabelTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/lifetimeLabel"
             android:layout_margin="4dp"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="italic"
             />
 
@@ -34,10 +35,10 @@
             app:layout_constraintStart_toEndOf="@id/LifetimeLabelTextView"
             android:id="@+id/LifetimeValueTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:text="@string/lifetimeValue"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="bold"
             />
 
@@ -56,10 +57,10 @@
             app:layout_constraintEnd_toStartOf="@id/GenderValueTextView"
             android:id="@+id/GenderLabelTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/genderLabel"
             android:layout_margin="4dp"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="italic"
             />
 
@@ -70,10 +71,10 @@
             app:layout_constraintStart_toEndOf="@id/GenderLabelTextView"
             android:id="@+id/GenderValueTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:text="@string/genderValue"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="bold"
             />
 
@@ -92,10 +93,10 @@
             app:layout_constraintEnd_toStartOf="@id/RaceValueTextView"
             android:id="@+id/RaceLabelTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/raceLabel"
             android:layout_margin="4dp"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="italic"
             />
 
@@ -106,10 +107,10 @@
             app:layout_constraintStart_toEndOf="@id/RaceLabelTextView"
             android:id="@+id/RaceValueTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:text="@string/raceValue"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="bold"
             />
 
@@ -128,10 +129,10 @@
             app:layout_constraintEnd_toStartOf="@id/HeightValueTextView"
             android:id="@+id/HeightLabelTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/heightLabel"
             android:layout_margin="4dp"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="italic"
             />
 
@@ -142,10 +143,10 @@
             app:layout_constraintStart_toEndOf="@id/HeightLabelTextView"
             android:id="@+id/HeightValueTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:text="@string/heightValue"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="bold"
             />
 
@@ -164,10 +165,10 @@
             app:layout_constraintEnd_toStartOf="@id/RealmValueTextView"
             android:id="@+id/RealmLabelTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/realmLabel"
             android:layout_margin="4dp"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="italic"
             />
 
@@ -178,10 +179,10 @@
             app:layout_constraintStart_toEndOf="@id/RealmLabelTextView"
             android:id="@+id/RealmValueTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:text="@string/realmValue"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="bold"
             />
 
@@ -200,10 +201,10 @@
             app:layout_constraintEnd_toStartOf="@id/SpouseValueTextView"
             android:id="@+id/SpouseLabelTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/spouseLabel"
             android:layout_margin="4dp"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="italic"
             />
 
@@ -214,10 +215,10 @@
             app:layout_constraintStart_toEndOf="@id/SpouseLabelTextView"
             android:id="@+id/SpouseValueTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:text="@string/spouseValue"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="bold"
             />
 
@@ -236,10 +237,10 @@
             app:layout_constraintEnd_toStartOf="@id/WikiUrlValueTextView"
             android:id="@+id/WikiUrlLabelTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/wikiurlLabel"
             android:layout_margin="4dp"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="italic"
             />
 
@@ -250,10 +251,10 @@
             app:layout_constraintStart_toEndOf="@id/WikiUrlLabelTextView"
             android:id="@+id/WikiUrlValueTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:text="@string/wikiurlValue"
-            android:textSize="20sp"
+            android:textSize="@dimen/dimDetailsTextSize"
             android:textStyle="bold"
             android:autoLink="web"
             />

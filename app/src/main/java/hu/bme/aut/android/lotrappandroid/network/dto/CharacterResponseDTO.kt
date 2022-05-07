@@ -16,21 +16,19 @@ data class CharacterResponseDTO (
 fun CharacterResponseDTO.mapToCharacterList(): List<LotRCharacter> {
     val characterList : MutableList<LotRCharacter> = mutableListOf()
     for (d in this.docs!!){
-        if(d.id == null){
-            d.id = "null"
-        }
+        if(d._id != null)
         characterList.add(LotRCharacter(
-            id = d.id!!,
-            height = d.height,
-            race = d.race,
-            gender = d.gender,
-            birth = d.birth,
-            spouse = d.spouse,
-            death = d.death,
-            realm = d.realm,
-            hair = d.hair,
-            name = d.name,
-            wikiUrl = d.wikiUrl
+            id = d._id!!,
+            height = d.height?: "-",
+            race = d.race?: "-",
+            gender = d.gender?: "-",
+            birth = d.birth?: "-",
+            spouse = d.spouse?: "-",
+            death = d.death?: "-",
+            realm = d.realm?: "-",
+            hair = d.hair?: "-",
+            name = d.name?: "-",
+            wikiUrl = d.wikiUrl?: "-"
         ))
     }
     return characterList
