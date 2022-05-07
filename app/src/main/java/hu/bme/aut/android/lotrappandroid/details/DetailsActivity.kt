@@ -1,17 +1,23 @@
 package hu.bme.aut.android.lotrappandroid.details
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.google.android.gms.analytics.HitBuilders
+import com.google.android.gms.analytics.Tracker
+import com.google.firebase.crashlytics.internal.Logger
 import dagger.hilt.android.AndroidEntryPoint
 import hu.bme.aut.android.lotrappandroid.R
+import hu.bme.aut.android.lotrappandroid.analytics.AnalyticsApplication
 import hu.bme.aut.android.lotrappandroid.model.LotRCharacter
 
 @AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
     private val detailsViewModel: DetailsViewModel by viewModels()
+    private var mTracker: Tracker? = null
 
     companion object{
         const val KEY_CHARACTER_ID = "characterID"
@@ -20,6 +26,9 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+
+        val application = application as AnalyticsApplication
+        mTracker = application.getDefaultTracker()
 
         val characterId = intent.getStringExtra(KEY_CHARACTER_ID) as String
         detailsViewModel.fetchCharacterDetails(characterId)
@@ -49,5 +58,12 @@ class DetailsActivity : AppCompatActivity() {
         spouseValue.text = character.spouse
         wikiUrlValue.text = character.wikiUrl
         wikiUrlValue.text = character.wikiUrl
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(Logger.TAG, "Setting screen name: DetailsActivity")
+        mTracker!!.setScreenName("Image~DetailsActivity")
+        mTracker!!.send(HitBuilders.ScreenViewBuilder().build())
     }
 }
