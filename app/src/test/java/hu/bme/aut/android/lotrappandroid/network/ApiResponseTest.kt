@@ -12,11 +12,8 @@ class ApiResponseTest {
 
     @Test
     fun success(){
-        //val apiResponse =
-
-        //if (apiResponse is ApiResponse.Success<String>) {
-        //    assertThat(apiResponse, `is`("foo"))
-        //}
+        val apiResponse = ApiResponse.Success(1)
+        assertThat(apiResponse.data, `is`(1))
     }
 
     @Test

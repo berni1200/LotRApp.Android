@@ -2,6 +2,7 @@ package hu.bme.aut.android.lotrappandroid.persistence
 
 import hu.bme.aut.android.lotrappandroid.model.LotRCharacter
 import hu.bme.aut.android.lotrappandroid.persistence.MockTestUtil.mockCharacterList
+import hu.bme.aut.android.lotrappandroid.persistence.MockTestUtil.mockSingleCharacter
 import hu.bme.aut.android.lotrappandroid.persistence.MockTestUtil.testCharacterList
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.CoreMatchers.`is`

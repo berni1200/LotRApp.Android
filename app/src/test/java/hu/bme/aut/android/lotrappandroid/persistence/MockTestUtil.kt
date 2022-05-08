@@ -14,4 +14,6 @@ object MockTestUtil {
         list.add(LotRCharacter("4", "h", "r", "g", "b", "s", "d", "r", "h", "n", "w"))
         return list
     }
+
+    fun mockSingleCharacter() = mock(LotRCharacter::class.java)
 }
