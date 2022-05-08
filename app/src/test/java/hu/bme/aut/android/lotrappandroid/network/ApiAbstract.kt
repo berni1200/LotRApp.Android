@@ -38,6 +38,11 @@ abstract class ApiAbstract<T> {
     }
 
     @Throws(IOException::class)
+    fun enqueueResponse(fileName: String) {
+        enqueueResponse(fileName, emptyMap())
+    }
+
+    @Throws(IOException::class)
     private fun enqueueResponse(fileName : String, headers: Map<String, String>){
         val inputStream = javaClass.classLoader!!.getResourceAsStream("api-response/$fileName")
         val source = inputStream.source().buffer()
