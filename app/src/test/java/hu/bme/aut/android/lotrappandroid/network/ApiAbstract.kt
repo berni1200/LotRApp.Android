@@ -1,6 +1,7 @@
 package hu.bme.aut.android.lotrappandroid.network
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import hu.bme.aut.android.lotrappandroid.LotRApp_GeneratedInjector
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okio.buffer
@@ -23,12 +24,18 @@ abstract class ApiAbstract<T> {
     val instantExecutorRule: InstantTaskExecutorRule = InstantTaskExecutorRule()
 
     lateinit var mockWebServer: MockWebServer
+    lateinit var service : LotRService
 
     @Throws(IOException::class)
     @Before
     fun mockServer(){
         mockWebServer = MockWebServer()
         mockWebServer.start()
+        service = Retrofit.Builder()
+            .baseUrl(mockWebServer.url("")) //https://the-one-api.dev/v2/
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(LotRService::class.java)
     }
 
     @Throws(IOException::class)
@@ -55,7 +62,7 @@ abstract class ApiAbstract<T> {
 
     fun createService(clazz: Class<T>): T{
         return Retrofit.Builder()
-            .baseUrl(mockWebServer.url("/"))
+            .baseUrl(mockWebServer.url("")) //https://the-one-api.dev/v2/
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(clazz)

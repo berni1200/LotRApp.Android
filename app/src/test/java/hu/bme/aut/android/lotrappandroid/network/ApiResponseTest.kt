@@ -1,5 +1,8 @@
 package hu.bme.aut.android.lotrappandroid.network
 
+import com.nhaarman.mockitokotlin2.isNotNull
+import hu.bme.aut.android.lotrappandroid.network.dto.mapToCharacterList
+import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
@@ -9,18 +12,15 @@ import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import retrofit2.Response
 import java.io.File
-import java.io.FileReader
-import java.nio.file.Files
 
 @RunWith(JUnit4::class)
-class ApiResponseTest : ApiAbstract<OkHttpClient>(){
+class ApiResponseTest : ApiAbstract<LotRService>(){
 
     @Test
     fun success(){
-        val apiResponse = ApiResponse.Success(1)
-        assertThat(apiResponse.data, `is`(1))
+        val apiResponse = ApiResponse.Success("foo")
+        assertThat(apiResponse.data, `is`("foo"))
     }
 
     @Test
@@ -39,7 +39,19 @@ class ApiResponseTest : ApiAbstract<OkHttpClient>(){
                     .setBody(File("LotRCharacterEx.json").inputStream().readBytes().toString(Charsets.UTF_8))
             }
         }
-
     }
+
+    @Test
+    fun fetchCharactersTest(){
+        runBlocking {
+            enqueueResponse("LotRCharacterEx.json")
+            val responseBody = service.fetchCharacterList().mapToCharacterList()
+            val request = mockWebServer.takeRequest()
+            assertThat(request.path, `is`("/character"))
+            //assertThat(responseBody, isNotNull() )
+        }
+    }
+
+
 
 }
