@@ -5,7 +5,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import hu.bme.aut.android.lotrappandroid.details.DetailsRepository
-import hu.bme.aut.android.lotrappandroid.main.Main
 import hu.bme.aut.android.lotrappandroid.main.MainRepository
 import hu.bme.aut.android.lotrappandroid.network.LotRService
 import hu.bme.aut.android.lotrappandroid.network.provider.NetworkDataSource

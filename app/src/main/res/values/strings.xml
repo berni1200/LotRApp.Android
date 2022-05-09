@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">LotRApp.Android</string>
+    <string name="app_name">TheOneApp</string>
+    <string name="tctWikiUrl">www.google.com</string>
+    <string name="lifetimeLabel">Lifetime</string>
+    <string name="lifetimeValue">March 1,2931 - FO 120</string>
+    <string name="genderLabel">Gender</string>
+    <string name="genderValue">Male</string>
+    <string name="raceLabel">Race</string>
+    <string name="raceValue">Human</string>
+    <string name="heightLabel">Height</string>
+    <string name="heightValue">198cm</string>
+    <string name="realmLabel">Realm</string>
+    <string name="realmValue">Reunited Kingdom, Arnor, Gondor</string>
+    <string name="spouseLabel">Spouse</string>
+    <string name="spouseValue">Arwen</string>
+    <string name="wikiurlLabel">wikiUrl</string>
+    <string name="wikiurlValue">http://lotr.wikia.com/wiki/Aragorn_II_Elessar</string>
+    <string name="character_name">Character_name</string>
+    <string name="character_race">Character_race</string>
+    <string name="filter_button_text">Filter</string>
 </resources>

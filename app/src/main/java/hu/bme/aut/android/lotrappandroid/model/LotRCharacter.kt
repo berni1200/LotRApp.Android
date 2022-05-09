@@ -6,7 +6,7 @@ import javax.annotation.concurrent.Immutable
 
 @Entity
 @Immutable
-data class Character (
+data class LotRCharacter(
     @PrimaryKey val id: String,
     val height: String,
     val race: String,

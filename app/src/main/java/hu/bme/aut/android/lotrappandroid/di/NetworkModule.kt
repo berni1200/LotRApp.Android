@@ -47,7 +47,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideDisneyService(retrofit: Retrofit): LotRService {
+    fun provideLotRService(retrofit: Retrofit): LotRService {
         return retrofit.create(LotRService::class.java)
     }
 }
