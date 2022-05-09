@@ -1,0 +1,22 @@
+{
+    "docs": [
+        {
+            "_id": "5cd99d4bde30eff6ebccfbc2",
+            "height": "",
+            "race": "Human",
+            "gender": "Female",
+            "birth": "Mid ,First Age",
+            "spouse": "Brodda",
+            "death": "FA 495",
+            "realm": "",
+            "hair": "",
+            "name": "Aerin",
+            "wikiUrl": "http://lotr.wikia.com//wiki/Aerin"
+        }
+    ],
+    "total": 1,
+    "limit": 1000,
+    "offset": 0,
+    "page": 1,
+    "pages": 1
+}
