@@ -8,6 +8,7 @@ import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.RecordedRequest
 import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -42,13 +43,24 @@ class ApiResponseTest : ApiAbstract<LotRService>(){
     }
 
     @Test
-    fun fetchCharactersTest(){
+    fun fetchCharacterListTest(){
         runBlocking {
             enqueueResponse("LotRCharacterEx.json")
-            val responseBody = service.fetchCharacterList().mapToCharacterList()
+            val responseBody = service.fetchCharacterList()
+            assertThat(responseBody, `is`(notNullValue()))
             val request = mockWebServer.takeRequest()
             assertThat(request.path, `is`("/character"))
-            //assertThat(responseBody, isNotNull() )
+        }
+    }
+
+    @Test
+    fun fetchCharacterTest(){
+        runBlocking {
+            enqueueResponse("LotRCharacterEx.json")
+            val responseBody = service.fetchCharacterById("5cd99d4bde30eff6ebccfbc2")
+            assertThat(responseBody, `is`(notNullValue()))
+            val request = mockWebServer.takeRequest()
+            assertThat(request.path, `is`("/character/5cd99d4bde30eff6ebccfbc2"))
         }
     }
 
